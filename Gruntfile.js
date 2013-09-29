@@ -30,15 +30,11 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     protractor: {
-      options: {
-        configFile:"test/testConf.js"
-      },
-      testGlobalOptions: {
-      },
-      testTaskOptions: {
+      testTargetConfigFile: {
         configFile:"test/testConf.js"
       },
       testArgs: {
+        configFile:"test/testConf.js",
         options: {
           args: {
             rootElement:"body",
