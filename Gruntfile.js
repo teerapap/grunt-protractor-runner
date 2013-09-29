@@ -29,23 +29,26 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    protractor_runner: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+    protractor: {
+      options: {
+        configFile:"test/testConf.js"
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+      testGlobalOptions: {
       },
+      testTaskOptions: {
+        options: {
+          configFile:"test/testConf.js"
+        }
+      },
+      testArgs: {
+        options: {
+          args: {
+            rootElement:"body",
+            specs:["test/blankTest.js"],
+            verbose:true
+          }
+        }
+      }
     },
 
     // Unit tests.
@@ -65,7 +68,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'protractor_runner', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'protractor']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

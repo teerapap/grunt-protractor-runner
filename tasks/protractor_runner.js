@@ -10,41 +10,53 @@
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
-  grunt.registerMultiTask('protractor_runner', 'A grunt task to run protractor.', function() {
+  grunt.registerMultiTask('protractor', 'A grunt task to run protractor.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
+    var opts = this.options({
+      configFile: 'node_modules/protractor/referenceConf.js',
+      args: {}
     });
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
+    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement"];
+    var listArgs = ["specs"];
+    var boolArgs = ["includeStackTrace", "verbose"];
+
+    var args = [opts.configFile];
+    // Iterate over all supported arguments.
+    strArgs.forEach(function(a) {
+      if (a in opts.args) {
+        args.push('--'+a, opts.args[a]);
+      }
+    });
+    listArgs.forEach(function(a) {
+      if (a in opts.args) {
+        args.push('--'+a, opts.args[a].join(","));
+      }
+    });
+    boolArgs.forEach(function(a) {
+      if (a in opts.args) {
+        args.push('--'+a);
+      }
+    });
+
+    var done = this.async();
+    // Spawn protractor command
+    grunt.util.spawn({
+        cmd: './node_modules/protractor/bin/protractor',
+        args: args,
+        opts: {
+          stdio:'inherit'
         }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
-
-      // Handle options.
-      src += options.punctuation;
-
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
-
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
+      },
+      function(error, result, code) {
+        if (error) {
+          grunt.log.error(String(result));
+          grunt.fail.fatal('protractor exited with code: '+code, 3);
+        } else {
+          done();
+        }
+      }
+    );
   });
 
 };
