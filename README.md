@@ -1,6 +1,6 @@
 # grunt-protractor-runner
 
-> A grunt task to run protractor.
+> A grunt task to run [Protractor](https://github.com/angular/protractor).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -17,16 +17,19 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-protractor-runner');
 ```
 
-## The "protractor_runner" task
+## The "protractor" task
 
 ### Overview
-In your project's Gruntfile, add a section named `protractor_runner` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `protractor` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  protractor_runner: {
+  protractor: {
     options: {
-      // Task-specific options go here.
+      configFile: "node_modules/protractor/referenceConf.js"
+      args: {
+        // Arguments passed to the command
+      }
     },
     your_target: {
       // Target-specific file lists and/or options go here.
@@ -37,53 +40,26 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.configFile
 Type: `String`
-Default value: `',  '`
+Default value: `node_modules/protractor/referenceConf.js`
 
-A string value that is used to do something with whatever.
+A protractor config file.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.args
+Type: `Object`
+Default value: `{}`
 
-A string value that is used to do something else with whatever else.
+Arguments passed to the command. Supported arguments are below.
 
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  protractor_runner: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  protractor_runner: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
+* seleniumAddress <string>: A running selenium address to use
+* seleniumServerJar <string>: Location of the standalone selenium server .jar file
+* seleniumPort <string>: Optional port for the standalone selenium server
+* baseUrl <string>: URL to prepend to all relative paths
+* rootElement <string>: Element housing ng-app, if not html or body
+* specs <array>: Array of files to test
+* includeStackTrace <boolean>: Print stack trace on error
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
-## Release History
-_(Nothing yet)_
