@@ -34,9 +34,14 @@
     "grunt": "~0.4.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "protractor": "~0.10.0"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "protractor",
+    "selenium",
+    "angular",
+    "angularjs"
   ]
 }
