@@ -36,9 +36,7 @@ module.exports = function(grunt) {
       testGlobalOptions: {
       },
       testTaskOptions: {
-        options: {
-          configFile:"test/testConf.js"
-        }
+        configFile:"test/testConf.js"
       },
       testArgs: {
         options: {
