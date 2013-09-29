@@ -26,13 +26,16 @@ In your project's Gruntfile, add a section named `protractor` to the data object
 grunt.initConfig({
   protractor: {
     options: {
-      configFile: "node_modules/protractor/referenceConf.js"
+      configFile: "node_modules/protractor/referenceConf.js", // Default config file
       args: {
         // Arguments passed to the command
       }
     },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      configFile: "e2e.conf.js", // Target-specific config file
+      options: {
+        args: {} // Target-specific arguments
+      }
     },
   },
 })
