@@ -1,6 +1,6 @@
 # grunt-protractor-runner
 
-> A grunt task to run [Protractor](https://github.com/angular/protractor).
+> A Grunt plugin for running [Protractor](https://github.com/angular/protractor) runner.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
