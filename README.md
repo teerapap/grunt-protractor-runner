@@ -27,8 +27,7 @@ grunt.initConfig({
   protractor: {
     options: {
       configFile: "node_modules/protractor/referenceConf.js", // Default config file
-      keepAlive: false, //if enabled, make sure grunt task continues on even if there are test failures. 
-                        // Useful when use with grunt watch 
+      keepAlive: true, // If false, the grunt process stops when the test fails.
       args: {
         // Arguments passed to the command
       }
@@ -51,6 +50,13 @@ Default value: `node_modules/protractor/referenceConf.js`
 
 A protractor config file.
 
+#### options.keepAlive
+Type: `Boolean`
+Default value: `true`
+
+If true, grunt process continues even if the test fails. This option is useful when using with grunt watch.
+If false, grunt process stops when the test fails.
+
 #### options.args
 Type: `Object`
 Default value: `{}`
@@ -69,7 +75,7 @@ Arguments passed to the command. Supported arguments are below.
 ## Tests
 
 After `npm install`, you need to run script `node_modules/protractor/bin/install_selenium_standalone` to download
-selenium to `selenium/`. 
+selenium to `selenium/`.
 
 Then run `grunt` to test the module. If it runs fine and opens chrome a couple of times without warnings or errors, it means success although it prints `0 tests, 0 assertions, 0 failures`.
 

@@ -33,6 +33,15 @@ module.exports = function(grunt) {
       testTargetConfigFile: {
         configFile:"test/testConf.js"
       },
+      testKeepAliveOnFailedTest: {
+        configFile:"test/testConf.js",
+        keepAlive: true,
+        options: {
+          args: {
+            specs:["test/failedTest.js"],
+          }
+        }
+      },
       testArgs: {
         configFile:"test/testConf.js",
         options: {

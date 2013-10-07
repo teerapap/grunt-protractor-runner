@@ -14,12 +14,13 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var opts = this.options({
       configFile: 'node_modules/protractor/referenceConf.js',
+      keepAlive: true,
       args: {}
     });
 
     // Merge options onto data, with data taking precedence
     opts = grunt.util._.merge(opts, this.data);
-    var alwaysSuccess = 'keepAlive';
+    var keepAlive = opts['keepAlive'];
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement"];
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
@@ -53,11 +54,14 @@ module.exports = function(grunt) {
       },
       function(error, result, code) {
         if (error) {
-          grunt.log.error(String(result));        
-          if(opts[alwaysSuccess]){
+          grunt.log.error(String(result));
+          if(code === 1 && keepAlive) {
+            // Test fails but do not want to stop the grunt process.
             done();
             done = null;
           } else {
+            // Test fails and want to stop the grunt process,
+            // or protractor exited with other reason.
             grunt.fail.fatal('protractor exited with code: '+code, 3);
           }
         } else {
