@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
     // Merge options onto data, with data taking precedence
     opts = grunt.util._.merge(opts, this.data);
-    var alwaysSuccess = 'alwaysSuccess';
+    var alwaysSuccess = 'keepAlive';
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement"];
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];

@@ -27,8 +27,8 @@ grunt.initConfig({
   protractor: {
     options: {
       configFile: "node_modules/protractor/referenceConf.js", // Default config file
-      alwaysSuccess: false, //if enabled, make sure grunt task continues on even if there are test failures. 
-                            // Useful when use with grunt watch 
+      keepAlive: false, //if enabled, make sure grunt task continues on even if there are test failures. 
+                        // Useful when use with grunt watch 
       args: {
         // Arguments passed to the command
       }
