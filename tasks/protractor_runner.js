@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
     // Merge options onto data, with data taking precedence
     opts = grunt.util._.merge(opts, this.data);
-
+    var alwaysSuccess = 'alwaysSuccess';
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement"];
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
@@ -53,10 +53,16 @@ module.exports = function(grunt) {
       },
       function(error, result, code) {
         if (error) {
-          grunt.log.error(String(result));
-          grunt.fail.fatal('protractor exited with code: '+code, 3);
+          grunt.log.error(String(result));        
+          if(opts[alwaysSuccess]){
+            done();
+            done = null;
+          } else {
+            grunt.fail.fatal('protractor exited with code: '+code, 3);
+          }
         } else {
           done();
+          done = null;
         }
       }
     );
