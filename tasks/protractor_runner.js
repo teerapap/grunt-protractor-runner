@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
 
-    var args = [opts.configFile];
+    var args = ['./node_modules/protractor/bin/protractor', opts.configFile];
     // Iterate over all supported arguments.
     strArgs.forEach(function(a) {
       if (a in opts.args) {
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     var done = this.async();
     // Spawn protractor command
     grunt.util.spawn({
-        cmd: './node_modules/protractor/bin/protractor',
+        cmd: 'node',
         args: args,
         opts: {
           stdio:'inherit'
