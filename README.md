@@ -84,5 +84,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 0.1.4 - Change protractor(peerDependencies) to support version to 0.10.x - 0.11.x (#6)
 * 0.1.3 - Fixed Windows command
 * 0.1.2 - Added keepAlive option.
