@@ -57,6 +57,12 @@ Default value: `true`
 If true, grunt process continues even if the test fails. This option is useful when using with grunt watch.
 If false, grunt process stops when the test fails.
 
+#### options.debug
+Type: `Boolean`
+Default value: `false`
+
+If true, grunt will pass 'debug' as second argument to protractor CLI to enable node CLI debugging as described in [Protractor Debugging documentation](https://github.com/angular/protractor/blob/master/docs/debugging.md).
+
 #### options.args
 Type: `Object`
 Default value: `{}`
