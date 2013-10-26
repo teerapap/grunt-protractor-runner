@@ -83,7 +83,11 @@ Arguments passed to the command. Supported arguments are below.
 After `npm install`, you need to run script `node_modules/protractor/bin/install_selenium_standalone` to download
 selenium to `selenium/`.
 
-Then run `grunt` to test the module. If it runs fine and opens chrome a couple of times without warnings or errors, it means success although it prints `0 tests, 0 assertions, 0 failures`.
+Then run `grunt` or `npm test` to test the module. You will encounter these.
+
+* It opens chrome a couple of times without warnings or errors.
+* A test task fails but the test process keeps alive and continues to the next test tasks.
+* It will launch the node debugger. You'll need to enter c a few times to progress through a few breakpoints, and then when it succeed, press Ctrl-c 2 times to exit the debugger to continue other test tasks.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
