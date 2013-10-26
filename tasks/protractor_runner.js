@@ -26,6 +26,10 @@ module.exports = function(grunt) {
     var boolArgs = ["includeStackTrace", "verbose"];
 
     var args = ['./node_modules/protractor/bin/protractor', opts.configFile];
+    if (!grunt.util._.isUndefined(opts.debug) && opts.debug === true){
+      args.splice(1,0,'debug');
+    }
+
     // Iterate over all supported arguments.
     strArgs.forEach(function(a) {
       if (a in opts.args) {
