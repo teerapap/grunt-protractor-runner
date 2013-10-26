@@ -31,9 +31,9 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     protractor: {
       testTargetConfigFile: {
+        keepAlive: false,
         configFile:"test/testConf.js"
       },
-      
       testKeepAliveOnFailedTest: {
         configFile:"test/testConf.js",
         keepAlive: true,
@@ -45,6 +45,7 @@ module.exports = function(grunt) {
       },
       testArgs: {
         configFile:"test/testConf.js",
+        keepAlive: false,
         options: {
           args: {
             rootElement:"body",
@@ -55,6 +56,7 @@ module.exports = function(grunt) {
       },
       testDebug: {
         configFile:"test/testConf.js",
+        keepAlive: false,
         debug:true,
         options: {
           args: {
