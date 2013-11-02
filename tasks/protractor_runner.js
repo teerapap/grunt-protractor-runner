@@ -47,8 +47,37 @@ module.exports = function(grunt) {
       }
     });
 
-    var done = this.async();
+    // Convert params object to --params.key1 val1 --params.key2 val2 ....
+    (function convert(prefix, obj, args) {
+      for (var key in obj) {
+        var val = obj[key];
+        var type = typeof obj[key];
+        if (type === "object") {
+          if (Array.isArray(val)) {
+            // Add duplicates --params.key val1 --params.key val2 ...
+            for (var i=0;i<val.length;i++) {
+              args.push(prefix+"."+key, val[i]);
+            }
+          } else {
+            // Dig deeper
+            convert(prefix+"."+key, val, args);
+          }
+        } else if (type === "undefined" || type === "function") {
+          // Skip these types
+        } else if (type === "boolean") {
+          // Add --params.key
+          args.push(prefix+"."+key);
+        } else {
+          // Add --params.key value
+          args.push(prefix+"."+key, val);
+        }
+      }
+    })("--params", opts.args.params, args); // initial arguments
+
+    grunt.verbose.writeln("Spwan node with arguments: " + args.join(" "));
+
     // Spawn protractor command
+    var done = this.async();
     grunt.util.spawn({
         cmd: 'node',
         args: args,

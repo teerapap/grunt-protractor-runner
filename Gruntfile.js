@@ -48,8 +48,18 @@ module.exports = function(grunt) {
         keepAlive: false,
         options: {
           args: {
+            params: {
+              number: 1,
+              bool: true,
+              str: "string",
+              nil: null, // Null is not supported.
+              obj: {
+                array: [1, 2, 3],
+                undef: undefined
+              }
+            },
             rootElement:"body",
-            specs:["test/blankTest.js"],
+            specs:["test/argsTest.js"],
             verbose:true
           }
         }
