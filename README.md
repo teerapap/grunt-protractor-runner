@@ -96,6 +96,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 0.1.7 - Support --browser and --params arguments passed to the protractor command using config in options.args (#12)
 * 0.1.6 - Change protractor(peerDependencies) to support version to 0.x (#8, #9, #10)
 * 0.1.5 - Added `options.debug` (#7)
 * 0.1.4 - Change protractor(peerDependencies) to support version to 0.10.x - 0.11.x (#6)
