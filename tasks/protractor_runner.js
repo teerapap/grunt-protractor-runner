@@ -61,6 +61,7 @@ module.exports = function(grunt) {
           grunt.log.error(String(result));
           if(code === 1 && keepAlive) {
             // Test fails but do not want to stop the grunt process.
+            grunt.log.oklns("Test failed but keep the grunt process alive.");
             done();
             done = null;
           } else {
