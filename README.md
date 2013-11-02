@@ -77,6 +77,8 @@ Arguments passed to the command. Supported arguments are below.
 * specs `array`: Array of spec files to test. Ex. `["spec1.js","spec2.js"]`
 * includeStackTrace `boolean`: Print stack trace on error
 * verbose `boolean`: Print full spec names
+* browser `string`: Browser name, e.g. chrome or firefox
+* params `object`: Param object to be passed to the test as browser.params
 
 ## Tests
 
