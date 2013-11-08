@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     // Merge options onto data, with data taking precedence
     opts = grunt.util._.merge(opts, this.data);
     var keepAlive = opts['keepAlive'];
-    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser"];
+    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser","chromeDriver"];
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
 
