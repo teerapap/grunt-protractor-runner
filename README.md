@@ -79,6 +79,7 @@ Arguments passed to the command. Supported arguments are below.
 * verbose `boolean`: Print full spec names
 * browser `string`: Browser name, e.g. chrome or firefox
 * params `object`: Param object to be passed to the test as browser.params
+* chromeDriver `string`: Location of chrome driver overridng the property in config file
 
 ## Tests
 
