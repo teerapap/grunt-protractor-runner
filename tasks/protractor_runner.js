@@ -8,6 +8,8 @@
 
 'use strict';
 
+var util = require('util');
+
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('protractor', 'A grunt task to run protractor.', function() {
@@ -15,11 +17,17 @@ module.exports = function(grunt) {
     var opts = this.options({
       configFile: 'node_modules/protractor/referenceConf.js',
       keepAlive: true,
+      debug: false,
       args: {}
     });
 
-    // Merge options onto data, with data taking precedence
-    opts = grunt.util._.merge(opts, this.data);
+    // configFile is a special property which need not to be in options{} object.
+    if (!grunt.util._.isUndefined(this.data.configFile)) {
+      opts.configFile = this.data.configFile;
+    }
+
+    grunt.verbose.writeln("Options: " + util.inspect(opts));
+
     var keepAlive = opts['keepAlive'];
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser","chromeDriver"];
     var listArgs = ["specs"];
