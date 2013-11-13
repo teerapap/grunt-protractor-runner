@@ -32,17 +32,17 @@ module.exports = function(grunt) {
 
     // Iterate over all supported arguments.
     strArgs.forEach(function(a) {
-      if (a in opts.args) {
-        args.push('--'+a, opts.args[a]);
+      if (a in opts.args || grunt.option(a)) {
+        args.push('--'+a, grunt.option(a) || opts.args[a]);
       }
     });
     listArgs.forEach(function(a) {
-      if (a in opts.args) {
-        args.push('--'+a, opts.args[a].join(","));
+      if (a in opts.args || grunt.option(a)) {
+        args.push('--'+a,  grunt.option(a) || opts.args[a].join(","));
       }
     });
     boolArgs.forEach(function(a) {
-      if (a in opts.args) {
+      if (a in opts.args || grunt.option(a)) {
         args.push('--'+a);
       }
     });
