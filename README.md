@@ -98,6 +98,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 0.1.9 
+  * Able to supply options.args via command-line arguments (#20)
+  * Fixed merging task-level and target-level options
 * 0.1.8 - Support --chromeDriver in options.args (#17)
 * 0.1.7 - Support --browser and --params arguments passed to the protractor command using config in options.args (#12)
 * 0.1.6 - Change protractor(peerDependencies) to support version to 0.x (#8, #9, #10)
