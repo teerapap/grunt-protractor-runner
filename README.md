@@ -67,7 +67,8 @@ If true, grunt will pass 'debug' as second argument to protractor CLI to enable 
 Type: `Object`
 Default value: `{}`
 
-Arguments passed to the command. Supported arguments are below.
+Arguments passed to the command. These arguments can also be supplied via command-line too. Ex.`grunt protractor --specs=specs/some-test.js`
+Supported arguments are below.
 
 * seleniumAddress `string`: A running selenium address to use
 * seleniumServerJar `string`: Location of the standalone selenium server .jar file
