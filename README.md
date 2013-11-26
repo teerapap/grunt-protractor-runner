@@ -81,6 +81,7 @@ Supported arguments are below.
 * browser `string`: Browser name, e.g. chrome or firefox
 * params `object`: Param object to be passed to the test as browser.params
 * chromeDriver `string`: Location of chrome driver overridng the property in config file
+* chromeOnly `boolean`: Bypass Selenium for Chrome only testing
 
 ## Tests
 
