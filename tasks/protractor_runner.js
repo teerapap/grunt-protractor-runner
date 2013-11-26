@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     grunt.verbose.writeln("Options: " + util.inspect(opts));
 
     var keepAlive = opts['keepAlive'];
-    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser","chromeDriver"];
+    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser","chromeDriver","chromeOnly"];
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
 
