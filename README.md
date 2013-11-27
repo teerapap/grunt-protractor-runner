@@ -28,6 +28,7 @@ grunt.initConfig({
     options: {
       configFile: "node_modules/protractor/referenceConf.js", // Default config file
       keepAlive: true, // If false, the grunt process stops when the test fails.
+      noColor: false, // If true, protractor will not use colors in its output.
       args: {
         // Arguments passed to the command
       }
@@ -56,6 +57,13 @@ Default value: `true`
 
 If true, grunt process continues even if the test fails. This option is useful when using with grunt watch.
 If false, grunt process stops when the test fails.
+
+#### options.keepAlive
+Type: `Boolean`
+Default value: `false`
+
+If true, protractor will not give colored output.
+If false, protractor will give colored output, as it does by default.
 
 #### options.debug
 Type: `Boolean`
