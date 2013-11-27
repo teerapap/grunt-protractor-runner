@@ -17,6 +17,7 @@ module.exports = function(grunt) {
     var opts = this.options({
       configFile: 'node_modules/protractor/referenceConf.js',
       keepAlive: true,
+      noColor: false,
       debug: false,
       args: {}
     });
@@ -34,6 +35,9 @@ module.exports = function(grunt) {
     var boolArgs = ["includeStackTrace", "verbose"];
 
     var args = ['./node_modules/protractor/bin/protractor', opts.configFile];
+    if (opts.noColor){
+      args.push('--no-jasmineNodeOpts.showColors');
+    }
     if (!grunt.util._.isUndefined(opts.debug) && opts.debug === true){
       args.splice(1,0,'debug');
     }
