@@ -58,7 +58,7 @@ Default value: `true`
 If true, grunt process continues even if the test fails. This option is useful when using with grunt watch.
 If false, grunt process stops when the test fails.
 
-#### options.keepAlive
+#### options.noColor
 Type: `Boolean`
 Default value: `false`
 
