@@ -107,6 +107,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 0.1.10
+  * Support --chromeOnly in options.args (#23)
+  * Support options.noColor to turn color off in protractor output (#24)
 * 0.1.9 
   * Able to supply options.args via command-line arguments (#20)
   * Fixed merging task-level and target-level options
