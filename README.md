@@ -95,7 +95,7 @@ Supported arguments are below.
 
 Run `npm install` to install dependencies.
 
-**Note:** Make sure you have protractor installed globally using `npm install -g protractor`
+**Note:** Make sure you have protractor installed locally using `npm install protractor`.
 
 As of protractor `0.14.0`, you install and update the selenium driver by running `webdriver-manager update`. To start the server, run `webdriver-manager start`. The server will run until the process is terminated.
 
