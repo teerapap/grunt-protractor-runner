@@ -9,6 +9,7 @@
 'use strict';
 
 var util = require('util');
+var path = require('path');
 
 module.exports = function(grunt) {
 
@@ -34,7 +35,11 @@ module.exports = function(grunt) {
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
 
-    var args = ['./node_modules/protractor/bin/protractor', opts.configFile];
+    // '.../node_modules/protractor/lib/protractor.js'
+    var protractorMainPath = require.resolve('protractor');
+    // '.../node_modules/protractor/bin/protractor'
+    var protractorBinPath = path.resolve(protractorMainPath, '../../bin/protractor');
+    var args = [protractorBinPath, opts.configFile];
     if (opts.noColor){
       args.push('--no-jasmineNodeOpts.showColors');
     }
