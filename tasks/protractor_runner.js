@@ -14,9 +14,17 @@ var path = require('path');
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('protractor', 'A grunt task to run protractor.', function() {
+
+    // '.../node_modules/protractor/lib/protractor.js'
+    var protractorMainPath = require.resolve('protractor');
+    // '.../node_modules/protractor/bin/protractor'
+    var protractorBinPath = path.resolve(protractorMainPath, '../../bin/protractor');
+    // '.../node_modules/protractor/referenceConf.js'
+    var protractorRefConfPath = path.resolve(protractorMainPath, '../../referenceConf.js');
+
     // Merge task-specific and/or target-specific options with these defaults.
     var opts = this.options({
-      configFile: 'node_modules/protractor/referenceConf.js',
+      configFile: protractorRefConfPath,
       keepAlive: true,
       noColor: false,
       debug: false,
@@ -35,10 +43,6 @@ module.exports = function(grunt) {
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
 
-    // '.../node_modules/protractor/lib/protractor.js'
-    var protractorMainPath = require.resolve('protractor');
-    // '.../node_modules/protractor/bin/protractor'
-    var protractorBinPath = path.resolve(protractorMainPath, '../../bin/protractor');
     var args = [protractorBinPath, opts.configFile];
     if (opts.noColor){
       args.push('--no-jasmineNodeOpts.showColors');
