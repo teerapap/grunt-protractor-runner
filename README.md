@@ -95,11 +95,13 @@ Supported arguments are below.
 
 ## Tests
 
-Run `npm install` to install dependencies.
+Run `npm install` to install dependencies. It will install protractor locally just for testing even though you have installed it globally.
+Run `./node_modules/protractor/bin/webdriver-manager update` to install and update the selenium driver locally.
 
-**Note:** Make sure you have protractor installed locally using `npm install protractor`.
+In case you want to test the plugin with the global installed protractor command.
 
-As of protractor `0.14.0`, you install and update the selenium driver by running `webdriver-manager update`. To start the server, run `webdriver-manager start`. The server will run until the process is terminated.
+* Remove local install protractor by `rm -rf node_modules/protractor`
+* Run `webdriver-manager update` to install/update selenium driver for global install protractor.
 
 Then run `grunt` or `npm test` to test the module. You will encounter these.
 
