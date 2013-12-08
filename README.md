@@ -47,7 +47,7 @@ grunt.initConfig({
 
 #### options.configFile
 Type: `String`
-Default value: `node_modules/protractor/referenceConf.js`
+Default value: `node_modules/protractor/referenceConf.js` relative to where protractor module is installed.
 
 A protractor config file.
 
@@ -111,6 +111,18 @@ Then run `grunt` or `npm test` to test the module. You will encounter these.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+## FAQ
+
+### Q: Use local or global protractor?
+
+Now the plugin uses local or global installed protractor the same way as how `require()` function chooses.
+
+### Q: No longer peerDependencies?
+
+It is no longer peerDependencies because protractor is officially suggested to be installed globally with `npm install -g`. Specifying it as peerDependencies will get npm to install it locally so the global installed one is not used by this plugin even though it exists. If user wants to use local protractor, specifies it as dependencies in user's package.json so it gets installed locally and used by this plugin.
+
+It is devDependencies because it is needed to test the plugin itself. The version for devDependencies is at least 0.14.0 because `testConf.js` needs to change due to new webdriver-manager script in protractor v0.14.0
 
 ## Release History
 
