@@ -95,8 +95,11 @@ Supported arguments are below.
 
 ## Tests
 
-After `npm install`, you need to run script `node_modules/protractor/bin/install_selenium_standalone` to download
-selenium to `selenium/`.
+Run `npm install` to install dependencies.
+
+**Note:** Make sure you have protractor installed locally using `npm install protractor`.
+
+As of protractor `0.14.0`, you install and update the selenium driver by running `webdriver-manager update`. To start the server, run `webdriver-manager start`. The server will run until the process is terminated.
 
 Then run `grunt` or `npm test` to test the module. You will encounter these.
 
