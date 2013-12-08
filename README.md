@@ -126,11 +126,14 @@ It is devDependencies because it is needed to test the plugin itself. The versio
 
 ## Release History
 
+* 0.2.0
+  * Able to use either local or global install protractor the same way as how `require()` function works
+  * Move protractor from peerDependencies to devDependencies. These changes might break some user modules. (See FAQ above for explanation)
 * 0.1.11 - Support SauceLabs account config in options.args
 * 0.1.10
   * Support --chromeOnly in options.args (#23)
   * Support options.noColor to turn color off in protractor output (#24)
-* 0.1.9 
+* 0.1.9
   * Able to supply options.args via command-line arguments (#20)
   * Fixed merging task-level and target-level options
 * 0.1.8 - Support --chromeDriver in options.args (#17)
