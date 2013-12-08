@@ -34,8 +34,8 @@ grunt.initConfig({
       }
     },
     your_target: {
-      configFile: "e2e.conf.js", // Target-specific config file
       options: {
+        configFile: "e2e.conf.js", // Target-specific config file
         args: {} // Target-specific arguments
       }
     },
