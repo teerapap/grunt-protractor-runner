@@ -92,6 +92,7 @@ Supported arguments are below.
 * chromeOnly `boolean`: Bypass Selenium for Chrome only testing
 * sauceUser `string`: Username for a SauceLabs account
 * sauceKey `string`: Access Key for a SauceLabs account
+* capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
 
 ## Tests
 
