@@ -14,6 +14,14 @@ describe('Argument test', function() {
                 undef: undefined
               }
             };
+
     expect(browser.params).toEqual(p);
   });
+
+  it('capabilities should have value.', function() {
+    var browserName = "firefox"; //Same as in Gruntfile.js.
+    browser.getCapability("browserName").then(function(browserName) {
+      expect(browserName).toEqual(browserName);
+    });
+  });  
 });

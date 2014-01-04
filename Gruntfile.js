@@ -59,6 +59,9 @@ module.exports = function(grunt) {
                 undef: undefined
               }
             },
+            capabilities: {
+              'browserName': 'firefox'
+            },
             rootElement:"body",
             specs:["test/argsTest.js"],
             verbose:true
