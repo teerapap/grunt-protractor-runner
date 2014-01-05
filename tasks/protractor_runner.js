@@ -42,6 +42,7 @@ module.exports = function(grunt) {
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser", "chromeDriver", "chromeOnly", "sauceUser", "sauceKey"];
     var listArgs = ["specs"];
     var boolArgs = ["includeStackTrace", "verbose"];
+    var objectArgs = ["params", "capabilities"];
 
     var args = [protractorBinPath, opts.configFile];
     if (opts.noColor){
@@ -68,32 +69,34 @@ module.exports = function(grunt) {
       }
     });
 
-    // Convert params object to --params.key1 val1 --params.key2 val2 ....
-    (function convert(prefix, obj, args) {
-      for (var key in obj) {
-        var val = obj[key];
-        var type = typeof obj[key];
-        if (type === "object") {
-          if (Array.isArray(val)) {
-            // Add duplicates --params.key val1 --params.key val2 ...
-            for (var i=0;i<val.length;i++) {
-              args.push(prefix+"."+key, val[i]);
+    // Convert [object] to --[object].key1 val1 --[object].key2 val2 ....
+    objectArgs.forEach(function(a) {
+      (function convert(prefix, obj, args) {
+        for (var key in obj) {
+          var val = obj[key];
+          var type = typeof obj[key];
+          if (type === "object") {
+            if (Array.isArray(val)) {
+              // Add duplicates --[object].key val1 --[object].key val2 ...
+              for (var i=0;i<val.length;i++) {
+                args.push(prefix+"."+key, val[i]);
+              }
+            } else {
+              // Dig deeper
+              convert(prefix+"."+key, val, args);
             }
+          } else if (type === "undefined" || type === "function") {
+            // Skip these types
+          } else if (type === "boolean") {
+            // Add --[object].key
+            args.push(prefix+"."+key);
           } else {
-            // Dig deeper
-            convert(prefix+"."+key, val, args);
+            // Add --[object].key value
+            args.push(prefix+"."+key, val);
           }
-        } else if (type === "undefined" || type === "function") {
-          // Skip these types
-        } else if (type === "boolean") {
-          // Add --params.key
-          args.push(prefix+"."+key);
-        } else {
-          // Add --params.key value
-          args.push(prefix+"."+key, val);
         }
-      }
-    })("--params", opts.args.params, args); // initial arguments
+      })("--" + a, opts.args[a], args);
+    });
 
     grunt.verbose.writeln("Spwan node with arguments: " + args.join(" "));
 
