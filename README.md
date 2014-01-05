@@ -127,6 +127,8 @@ It is `devDependencies` because it is needed to test the plugin itself. The vers
 
 ## Release History
 
+* 0.2.1
+  * Support --capabilities in options.args (#33)
 * 0.2.0
   * Able to use either local or global install protractor the same way as how `require()` function works (#29)
   * Move protractor from `peerDependencies` to `devDependencies`. These changes might break some user modules. (See FAQ above for explanation) (#29)
