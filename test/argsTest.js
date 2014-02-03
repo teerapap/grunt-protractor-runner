@@ -19,7 +19,7 @@ describe('Argument test', function() {
   });
 
   it('capabilities should have value.', function() {
-    var browserName = "firefox"; //Same as in Gruntfile.js.
+    var browserName = "chrome"; //Same as in Gruntfile.js.
     browser.getCapability("browserName").then(function(browserName) {
       expect(browserName).toEqual(browserName);
     });

@@ -60,7 +60,7 @@ module.exports = function(grunt) {
               }
             },
             capabilities: {
-              'browserName': 'firefox'
+              'browserName': 'chrome'
             },
             rootElement:"body",
             specs:["test/argsTest.js"],
