@@ -93,6 +93,7 @@ Supported arguments are below.
 * sauceUser `string`: Username for a SauceLabs account
 * sauceKey `string`: Access Key for a SauceLabs account
 * capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
+* framework `string`: Limited support for using mocha as the test framework instead of jasmine.
 
 ## Tests
 
