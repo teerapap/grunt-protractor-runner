@@ -98,7 +98,7 @@ module.exports = function(grunt) {
       })("--" + a, opts.args[a], args);
     });
 
-    grunt.verbose.writeln("Spwan node with arguments: " + args.join(" "));
+    grunt.verbose.writeln("Spawn node with arguments: " + args.join(" "));
 
     // Spawn protractor command
     var done = this.async();
