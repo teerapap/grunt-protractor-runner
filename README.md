@@ -3,7 +3,7 @@
 > A Grunt plugin for running [Protractor](https://github.com/angular/protractor) runner.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1` and Protractor `>=0.10.0-0 <1.0.0`
+This plugin requires Grunt `~0.4.1` and Protractor `>=0.14.0-0 <1.0.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -11,6 +11,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 npm install grunt-protractor-runner --save-dev
 ```
 
+This plugin will install `protractor` module locally as a normal dependency.
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
@@ -97,13 +98,7 @@ Supported arguments are below.
 
 ## Tests
 
-Run `npm install` to install dependencies. It will install protractor locally just for testing even though you have installed it globally.
-Run `./node_modules/protractor/bin/webdriver-manager update` to install and update the selenium driver locally.
-
-In case you want to test the plugin with the global installed protractor command.
-
-* Remove local install protractor by `rm -rf node_modules/protractor`
-* Run `webdriver-manager update` to install/update selenium driver for global install protractor.
+Run `npm install` to install dependencies.
 
 Then run `grunt` or `npm test` to test the module. You will encounter these.
 
@@ -116,15 +111,16 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## FAQ
 
-### Q: Use local or global protractor?
+### Q: Want to global installed protractor?
 
-Now the plugin uses local or global installed protractor the same way as how `require()` function chooses.
+This plugin installs `protractor` module locally as a normal dependency.
 
-### Q: No longer peerDependencies?
+In case you want to use the plugin with the global installed protractor command. You can do it with these steps below.
 
-It is no longer `peerDependencies` because protractor is officially suggested to be installed globally with `npm install -g`. Specifying it as `peerDependencies` will get npm to install it locally so the global installed one is not used by this plugin even though it exists. If user wants to use local protractor, specifies it as `dependencies` in user's `package.json` so it gets installed locally and used by this plugin.
-
-It is `devDependencies` because it is needed to test the plugin itself. The version for `devDependencies` is at least 0.14.0 because `testConf.js` needs to change due to new `webdriver-manager` script in protractor v0.14.0
+* Remove local install protractor by `rm -rf node_modules/protractor`
+* Install `protractor` globally  with `npm install -g protractor`
+* Make sure that node can resolve the module with `require()` mechanism. See [Module loding from the global folders](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders) for more information.
+* Run `webdriver-manager update` to install/update selenium driver for global install protractor.
 
 ## Release History
 
