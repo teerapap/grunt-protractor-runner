@@ -124,6 +124,9 @@ In case you want to use the plugin with the global installed protractor command.
 
 ## Release History
 
+* 0.2.2
+  * Add `protractor` module as a normal dependency and automatically download/update webdriver with `webdriver-manager` after installed (#29, #39)
+  * Support --framework in options.args (#36)
 * 0.2.1
   * Support --capabilities in options.args (#33)
 * 0.2.0
