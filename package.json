@@ -25,7 +25,6 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "install": "./node_modules/protractor/bin/webdriver-manager update",
     "test": "grunt test"
   },
   "dependencies": {

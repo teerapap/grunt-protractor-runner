@@ -18,6 +18,8 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-protractor-runner');
 ```
 
+If you want to use standalone selenium server, run `./node_modules/protractor/bin/webdriver-manager update` to install/update the selenium server for local installed protractor.
+
 ## The "protractor" task
 
 ### Overview
