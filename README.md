@@ -127,6 +127,8 @@ In case you want to use the plugin with the global installed protractor command.
 
 ## Release History
 
+* 0.2.4
+  * Support --cucumberOpts in options.args (#46)
 * 0.2.3
   * Temporarily remove automatically download/update webdriver-manager because it fails in some environment such as Windows (#41)
 * 0.2.2
