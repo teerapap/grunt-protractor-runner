@@ -97,6 +97,7 @@ Supported arguments are below.
 * sauceKey `string`: Access Key for a SauceLabs account
 * capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
 * framework `string`: Limited support for using mocha as the test framework instead of jasmine.
+* cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
 
 ## Tests
 
