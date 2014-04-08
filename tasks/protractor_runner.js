@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser", "chromeDriver", "chromeOnly", "sauceUser", "sauceKey", "framework"];
     var listArgs = ["specs", "exclude"];
     var boolArgs = ["includeStackTrace", "verbose"];
-    var objectArgs = ["params", "capabilities", "cucumberOpts"];
+    var objectArgs = ["params", "capabilities", "cucumberOpts", "mochaOpts"];
 
     var args = [protractorBinPath, opts.configFile];
     if (opts.noColor){
