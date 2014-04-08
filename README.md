@@ -87,6 +87,7 @@ Supported arguments are below.
 * baseUrl `string`: URL to prepend to all relative paths
 * rootElement `string`: Element housing ng-app, if not html or body
 * specs `array`: Array of spec files to test. Ex. `["spec1.js","spec2.js"]`
+* exclude `array`: Array of files to exclude from tests.
 * includeStackTrace `boolean`: Print stack trace on error
 * verbose `boolean`: Print full spec names
 * browser `string`: Browser name, e.g. chrome or firefox
@@ -98,6 +99,7 @@ Supported arguments are below.
 * capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
 * framework `string`: Limited support for using mocha as the test framework instead of jasmine.
 * cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
+* mochaOpts `object`: Mocha test framework options object to be passed
 
 ## Tests
 
