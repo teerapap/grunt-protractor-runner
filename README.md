@@ -87,6 +87,7 @@ Supported arguments are below.
 * baseUrl `string`: URL to prepend to all relative paths
 * rootElement `string`: Element housing ng-app, if not html or body
 * specs `array`: Array of spec files to test. Ex. `["spec1.js","spec2.js"]`
+* suite `string`: Name of test suite to run
 * includeStackTrace `boolean`: Print stack trace on error
 * verbose `boolean`: Print full spec names
 * browser `string`: Browser name, e.g. chrome or firefox
