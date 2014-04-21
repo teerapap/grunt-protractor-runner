@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 
     var keepAlive = opts['keepAlive'];
     var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser", "chromeDriver", "chromeOnly", "sauceUser", "sauceKey", "framework"];
-    var listArgs = ["specs"];
+    var listArgs = ["specs", "exclude"];
     var boolArgs = ["includeStackTrace", "verbose"];
     var objectArgs = ["params", "capabilities", "cucumberOpts"];
 
