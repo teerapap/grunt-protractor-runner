@@ -130,6 +130,8 @@ In case you want to use the plugin with the global installed protractor command.
 
 ## Release History
 
+* 0.2.5
+  * Support --mochaOpts, --suite and --exclude in options.args (#52, #53, #57)
 * 0.2.4
   * Support --cucumberOpts in options.args (#46)
 * 0.2.3
