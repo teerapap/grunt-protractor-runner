@@ -88,6 +88,7 @@ Supported arguments are below.
 * rootElement `string`: Element housing ng-app, if not html or body
 * specs `array`: Array of spec files to test. Ex. `["spec1.js","spec2.js"]`
 * exclude `array`: Array of files to exclude from testing. Ex. `["spec2.js"]`
+* suite `string`: Name of test suite to run
 * includeStackTrace `boolean`: Print stack trace on error
 * verbose `boolean`: Print full spec names
 * browser `string`: Browser name, e.g. chrome or firefox
