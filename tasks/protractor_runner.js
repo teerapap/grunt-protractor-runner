@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var opts = this.options({
       configFile: protractorRefConfPath,
-      keepAlive: true,
+      keepAlive: false,
       noColor: false,
       debug: false,
       args: {}
