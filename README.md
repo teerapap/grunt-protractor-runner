@@ -56,7 +56,7 @@ A protractor config file.
 
 #### options.keepAlive
 Type: `Boolean`
-Default value: `true`
+Default value: `false` (`true` before v1.0.0)
 
 If true, grunt process continues even if the test fails. This option is useful when using with grunt watch.
 If false, grunt process stops when the test fails.
