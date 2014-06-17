@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     var boolArgs = ["includeStackTrace", "verbose"];
     var objectArgs = ["params", "capabilities", "cucumberOpts", "mochaOpts"];
 
-    var args = [protractorBinPath, opts.configFile];
+    var args = process.execArgv.concat([protractorBinPath, opts.configFile]);
     if (opts.noColor){
       args.push('--no-jasmineNodeOpts.showColors');
     }
