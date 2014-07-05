@@ -25,12 +25,13 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "node test/runtest.js"
   },
   "dependencies": {
     "protractor": ">=0.14.0-0 <1.0.0"
   },
   "devDependencies": {
+    "nexpect": "~0.4.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",
