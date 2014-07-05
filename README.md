@@ -129,6 +129,10 @@ In case you want to use the plugin with the global installed protractor command.
 
 ## Release History
 
+* 1.0.1
+  * Pass specified command line params to the subprocess (#68)
+  * Make npm test to run and handle interactive debugger by itself (#66)
+  * Fixed argsTest
 * 1.0.0
   * Change default value of `options.keepAlive` to false (#50)
 
