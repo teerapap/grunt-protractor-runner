@@ -28,7 +28,7 @@
     "test": "node test/runtest.js"
   },
   "dependencies": {
-    "protractor": "~1.0.0"
+    "protractor": "^1.0.0"
   },
   "devDependencies": {
     "nexpect": "~0.4.0",
