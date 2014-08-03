@@ -124,7 +124,7 @@ In case you want to use the plugin with the global installed protractor command.
 
 * Remove local install protractor by `rm -rf node_modules/protractor`
 * Install `protractor` globally  with `npm install -g protractor`
-* Make sure that node can resolve the module with `require()` mechanism. See [Module loding from the global folders](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders) for more information.
+* Make sure that node can resolve the module with `require()` mechanism. See [Module loading from the global folders](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders) for more information.
 * Run `webdriver-manager update` to install/update selenium driver for global install protractor.
 
 ## Release History
