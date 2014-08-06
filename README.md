@@ -68,11 +68,6 @@ Default value: `false`
 If true, protractor will not give colored output.
 If false, protractor will give colored output, as it does by default.
 
-#### options.output
-Type: `String`
-
-The file that the task should output the results to.
-
 #### options.debug
 Type: `Boolean`
 Default value: `false`
@@ -106,6 +101,12 @@ Supported arguments are below.
 * framework `string`: Limited support for using mocha as the test framework instead of jasmine.
 * cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
 * mochaOpts `object`: Mocha test framework options object to be passed
+
+#### options.output
+Type: `String`
+Default value: `false`
+
+The file that the task should output the results to.
 
 ## Tests
 

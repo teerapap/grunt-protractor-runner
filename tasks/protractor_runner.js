@@ -10,6 +10,9 @@
 
 var util = require('util');
 var path = require('path');
+var fs = require('fs');
+var split = require('split');
+var through2 = require('through2');
 
 module.exports = function(grunt) {
 
@@ -28,7 +31,8 @@ module.exports = function(grunt) {
       keepAlive: false,
       noColor: false,
       debug: false,
-      args: {}
+      args: {},
+      output: false
     });
 
     // configFile is a special property which need not to be in options{} object.
@@ -102,11 +106,11 @@ module.exports = function(grunt) {
 
     // Spawn protractor command
     var done = this.async();
-    grunt.util.spawn({
+    var child = grunt.util.spawn({
         cmd: 'node',
         args: args,
         opts: {
-          stdio:'inherit'
+          stdio:'pipe'
         }
       },
       function(error, result, code) {
@@ -128,6 +132,29 @@ module.exports = function(grunt) {
         }
       }
     );
+    child.stdout.pipe(process.stdout);
+    child.stderr.pipe(process.stderr);
+
+    // Write the result in the output file
+    if (!grunt.util._.isUndefined(opts.output) && opts.output !== false) {
+
+      grunt.verbose.writeln("Write the result to: " + opts.output);
+
+      grunt.file.mkdir(path.dirname(opts.output));
+
+      child.stdout
+        .pipe(split())
+        .pipe(through2(function (chunk, encoding, callback) {
+          if ((/^Using the selenium server at/).test(chunk.toString())) {
+            // skip
+          }
+          else {
+            this.push(chunk + '\n');
+          }  
+          callback();
+        }))
+        .pipe(fs.createWriteStream(opts.output));
+    }
   });
 
 };
