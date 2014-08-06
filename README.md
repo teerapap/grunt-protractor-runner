@@ -68,6 +68,11 @@ Default value: `false`
 If true, protractor will not give colored output.
 If false, protractor will give colored output, as it does by default.
 
+#### options.output
+Type: `String`
+
+The file that the task should output the results to.
+
 #### options.debug
 Type: `Boolean`
 Default value: `false`
