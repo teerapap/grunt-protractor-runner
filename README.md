@@ -129,6 +129,8 @@ In case you want to use the plugin with the global installed protractor command.
 
 ## Release History
 
+* 1.1.1
+  * Run webdriver-manager update on postinstall (#41)
 * 1.1.0
   * Update protractor to version 1.x.x
 * 1.0.1
