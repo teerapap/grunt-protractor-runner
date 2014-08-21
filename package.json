@@ -25,7 +25,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/webdriver-manager update",
+    "postinstall": "webdriver-manager update",
     "test": "node test/runtest.js"
   },
   "dependencies": {
