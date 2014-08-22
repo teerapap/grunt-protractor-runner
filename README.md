@@ -135,6 +135,8 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 1.1.4
+  * Move `webdriver-manager update` step from problematic postinstall to pretest
 * 1.1.3
   * Attempt to fix webdriver-manager postinstall problem with webdriver-manager script (#83)
 * 1.1.2
