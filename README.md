@@ -129,6 +129,8 @@ In case you want to use the plugin with the global installed protractor command.
 
 ## Release History
 
+* 1.1.3
+  * Attempt to fix webdriver-manager postinstall problem with webdriver-manager script (#83)
 * 1.1.2
   * Attempt to fix webdriver-manager path in package.json postinstall
   * Add Travis CI build configuration
