@@ -127,6 +127,12 @@ In case you want to use the plugin with the global installed protractor command.
 * Make sure that node can resolve the module with `require()` mechanism. See [Module loading from the global folders](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders) for more information.
 * Run `webdriver-manager update` to install/update selenium driver for global install protractor.
 
+### Q: Error: Could not find chromedriver at....
+
+You need to install/update selenium webdriver for protractor.
+
+* Run `webdriver-manager update` or `node scripts/webdriver-manager-update`
+
 ## Release History
 
 * 1.1.3
