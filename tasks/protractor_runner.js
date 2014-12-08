@@ -28,6 +28,7 @@ module.exports = function(grunt) {
       keepAlive: false,
       noColor: false,
       debug: false,
+      nodeBin: 'node',
       args: {}
     });
 
@@ -103,7 +104,7 @@ module.exports = function(grunt) {
     // Spawn protractor command
     var done = this.async();
     grunt.util.spawn({
-        cmd: 'node',
+        cmd: opts.nodeBin,
         args: args,
         opts: {
           stdio:'inherit'
