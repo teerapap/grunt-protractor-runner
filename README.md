@@ -1,5 +1,7 @@
 # grunt-protractor-runner
 
+[![Build Status](https://travis-ci.org/teerapap/grunt-protractor-runner.svg?branch=master)](https://travis-ci.org/teerapap/grunt-protractor-runner)
+
 > A Grunt plugin for running [Protractor](https://github.com/angular/protractor) runner.
 
 ## Getting Started
