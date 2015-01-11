@@ -1,5 +1,7 @@
 describe('Debugger test', function() {
-  ptor = protractor.getInstance();
+  // getInstance() is removed since protractor v1.5.0
+  ptor = (protractor.getInstance)? protractor.getInstance():browser;
+
   it('should laucnh debugger and verify window.clientSideScripts loaded', function() {
   	ptor.debugger();
     // window.clientSideScripts should be injected on ptor.debugger()
