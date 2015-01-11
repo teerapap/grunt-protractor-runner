@@ -12,6 +12,8 @@ nexpect.spawn("grunt", ["test"], { stripColors: true, verbose:true })
        .run(function (err, o, code) {
           if (err) {
             console.log(err)
+            process.exit(1);
+            return;
           }
           process.exit(code);
        });
