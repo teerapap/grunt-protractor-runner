@@ -48,7 +48,10 @@ exports.config = {
   // and
   // https://code.google.com/p/selenium/source/browse/javascript/webdriver/capabilities.js
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    'chromeOptions': {
+      'args': ['no-sandbox','no-default-browser-check','no-first-run','disable-default-apps']
+    }
   },
 
   // A base URL for your application under test. Calls to protractor.get()
