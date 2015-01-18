@@ -132,13 +132,14 @@ module.exports = function(grunt) {
         }
       }
     );
+    process.stdin.pipe(child.stdin);
     child.stdout.pipe(process.stdout);
     child.stderr.pipe(process.stderr);
 
     // Write the result in the output file
     if (!grunt.util._.isUndefined(opts.output) && opts.output !== false) {
 
-      grunt.verbose.writeln("Write the result to: " + opts.output);
+      grunt.log.writeln("Output test result to: " + opts.output);
 
       grunt.file.mkdir(path.dirname(opts.output));
 
