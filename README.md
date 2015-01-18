@@ -108,6 +108,7 @@ Supported arguments are below.
 * framework `string`: Limited support for using mocha as the test framework instead of jasmine.
 * cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
 * mochaOpts `object`: Mocha test framework options object to be passed
+* nodeBin `string`: Path to the node binary file('node' as default). Useful if node is not on the PATH. 
 
 #### options.output
 Type: `String`
