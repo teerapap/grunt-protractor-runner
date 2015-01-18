@@ -115,6 +115,12 @@ Default value: `false`
 
 The file that the task should output the results to.
 
+#### options.nodeBin
+Type: `String`
+Default value: `node`
+
+Path to the node binary file. Useful if node is not on the PATH. 
+
 ## Tests
 
 Run `npm install` to install dependencies.
