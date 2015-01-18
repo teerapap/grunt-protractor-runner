@@ -104,6 +104,7 @@ Supported arguments are below.
 * directConnect `boolean`: To connect directly to the browser Drivers. This option is only available for Firefox and Chrome.
 * sauceUser `string`: Username for a SauceLabs account
 * sauceKey `string`: Access Key for a SauceLabs account
+* sauceSeleniumAddress `string`: Customize the URL Protractor uses to connect to sauce labs (for example, if you are tunneling selenium traffic through a sauce connect tunnel). Default is `ondemand.saucelabs.com:80/wd/hub`
 * capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
 * framework `string`: Limited support for using mocha as the test framework instead of jasmine.
 * cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
