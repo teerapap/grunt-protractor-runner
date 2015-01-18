@@ -155,6 +155,8 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 1.2.1
+  * Move `split` and `through2` from devDependencies to dependencies (#104)
 * 1.2.0
   * Add `options.nodeBin` to specify node binary (#96)
   * Support --directConnect and --sauceSeleniumAddress in options.args (#95, #101)
