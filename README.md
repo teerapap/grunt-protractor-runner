@@ -108,6 +108,12 @@ Supported arguments are below.
 * cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
 * mochaOpts `object`: Mocha test framework options object to be passed
 
+#### options.output
+Type: `String`
+Default value: `false`
+
+The file that the task should output the results to.
+
 ## Tests
 
 Run `npm install` to install dependencies.
