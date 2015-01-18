@@ -101,6 +101,7 @@ Supported arguments are below.
 * params `object`: Param object to be passed to the test as browser.params
 * chromeDriver `string`: Location of chrome driver overridng the property in config file
 * chromeOnly `boolean`: Bypass Selenium for Chrome only testing
+* directConnect `boolean`: To connect directly to the browser Drivers. This option is only available for Firefox and Chrome.
 * sauceUser `string`: Username for a SauceLabs account
 * sauceKey `string`: Access Key for a SauceLabs account
 * capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
