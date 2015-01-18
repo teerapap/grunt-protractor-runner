@@ -135,7 +135,7 @@ In case you want to use the plugin with the global installed protractor command.
 
 You need to install/update selenium webdriver for protractor.
 
-* Run `node ./node_modules/protractor/bin/webdriver-manager update`
+* Run `webdriver-manager update` or `node scripts/webdriver-manager-update` or `node ./node_modules/protractor/bin/webdriver-manager update`
 
 ## Release History
 
