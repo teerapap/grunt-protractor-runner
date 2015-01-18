@@ -29,16 +29,16 @@
     "test": "node test/runtest.js"
   },
   "dependencies": {
-    "protractor": "^1.0.0"
+    "protractor": "^1.0.0",
+    "split": "~0.3.0",
+    "through2": "~0.5.1"
   },
   "devDependencies": {
     "nexpect": "~0.4.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt": "~0.4.1",
-    "split": "~0.3.0",
-    "through2": "~0.5.1"
+    "grunt": "~0.4.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
