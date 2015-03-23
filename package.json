@@ -29,7 +29,7 @@
     "test": "node test/runtest.js"
   },
   "dependencies": {
-    "protractor": "^1.0.0",
+    "protractor": "^2.0.0",
     "split": "~0.3.0",
     "through2": "~0.5.1"
   },
