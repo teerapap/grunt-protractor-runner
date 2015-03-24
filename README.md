@@ -5,7 +5,7 @@
 > A Grunt plugin for running [Protractor](https://github.com/angular/protractor) runner.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1` and Protractor `1.x.x`
+This plugin requires Grunt `~0.4.1` and Protractor `2.x.x`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -100,7 +100,7 @@ Supported arguments are below.
 * browser `string`: Browser name, e.g. chrome or firefox
 * params `object`: Param object to be passed to the test as browser.params
 * chromeDriver `string`: Location of chrome driver overridng the property in config file
-* chromeOnly `boolean`: Bypass Selenium for Chrome only testing
+* directConnect `boolean`: Bypass Selenium for direct testing Chrome or Firefox
 * directConnect `boolean`: To connect directly to the browser Drivers. This option is only available for Firefox and Chrome.
 * sauceUser `string`: Username for a SauceLabs account
 * sauceKey `string`: Access Key for a SauceLabs account
