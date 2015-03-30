@@ -123,7 +123,7 @@ module.exports = function(grunt) {
           } else {
             // Test fails and want to stop the grunt process,
             // or protractor exited with other reason.
-            grunt.warn('Tests failed, protractor exited with code: '+code);
+            grunt.warn('Tests failed, protractor exited with code: '+code, code);
           }
         }
         done();
