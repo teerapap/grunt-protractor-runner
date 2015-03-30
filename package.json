@@ -26,7 +26,7 @@
   },
   "scripts": {
     "pretest": "node scripts/webdriver-manager-update",
-    "test": "node test/runtest.js"
+    "test": "grunt test"
   },
   "dependencies": {
     "protractor": "^2.0.0",
@@ -34,7 +34,6 @@
     "through2": "~0.5.1"
   },
   "devDependencies": {
-    "nexpect": "~0.4.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",

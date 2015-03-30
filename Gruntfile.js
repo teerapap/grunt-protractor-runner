@@ -68,15 +68,6 @@ module.exports = function(grunt) {
           }
         }
       },
-      testDebug: {
-        configFile:"test/testConf.js",
-        options: {
-          debug:true,
-          args: {
-            specs:["test/debugTest.js"],
-          }
-        }
-      }
     },
 
     // Unit tests.
