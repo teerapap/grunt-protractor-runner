@@ -156,6 +156,12 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 2.0.0
+  * Upgrade `protractor` to `^2.0.0` (#114)
+  * `chromeOnly` in `options.args` is deprecated. Replaced by `directConnect` (#114)
+  * Support `beforeLaunch` and `onPrepare` in `options.args` (#110)
+  * When one of the tests fails, throw warning instead of fatal error so that grunt can still use --force to continue. (#103)
+
 * 1.2.1
   * Move `split` and `through2` from devDependencies to dependencies (#104)
 * 1.2.0
