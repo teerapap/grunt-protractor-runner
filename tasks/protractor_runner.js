@@ -120,17 +120,14 @@ module.exports = function(grunt) {
           if(code === 1 && keepAlive) {
             // Test fails but do not want to stop the grunt process.
             grunt.log.oklns("Test failed but keep the grunt process alive.");
-            done();
-            done = null;
           } else {
             // Test fails and want to stop the grunt process,
             // or protractor exited with other reason.
-            grunt.fail.fatal('protractor exited with code: '+code, 3);
+            grunt.warn('Tests failed, protractor exited with code: '+code);
           }
-        } else {
-          done();
-          done = null;
         }
+        done();
+        done = null;
       }
     );
     process.stdin.pipe(child.stdin);
