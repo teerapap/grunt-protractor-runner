@@ -77,6 +77,9 @@ module.exports = function(grunt) {
     // Convert [object] to --[object].key1 val1 --[object].key2 val2 ....
     objectArgs.forEach(function(a) {
       (function convert(prefix, obj, args) {
+        if (typeof obj === 'string'){
+          obj = JSON.parse(obj);
+        }
         for (var key in obj) {
           var val = obj[key];
           var type = typeof obj[key];
@@ -100,7 +103,7 @@ module.exports = function(grunt) {
             args.push(prefix+"."+key, val);
           }
         }
-      })("--" + a, opts.args[a], args);
+      })("--" + a, grunt.option(a) || opts.args[a], args);
     });
 
     grunt.verbose.writeln("Spawn node with arguments: " + args.join(" "));
