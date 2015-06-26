@@ -13,6 +13,7 @@ var path = require('path');
 var fs = require('fs');
 var split = require('split');
 var through2 = require('through2');
+var spawnSync = require('child_process').spawnSync;
 
 module.exports = function(grunt) {
 
@@ -24,6 +25,8 @@ module.exports = function(grunt) {
     var protractorBinPath = path.resolve(protractorMainPath, '../../bin/protractor');
     // '.../node_modules/protractor/referenceConf.js'
     var protractorRefConfPath = path.resolve(protractorMainPath, '../../referenceConf.js');
+    // '.../node_modules/protractor/bin/webdriver-manager'
+    var webdriverManagerPath = path.resolve(protractorMainPath, '../../bin/webdriver-manager');
 
     // Merge task-specific and/or target-specific options with these defaults.
     var opts = this.options({
@@ -33,8 +36,14 @@ module.exports = function(grunt) {
       debug: false,
       nodeBin: 'node',
       args: {},
-      output: false
+      output: false,
+      webdriverManagerUpdate: false
     });
+
+    if (opts.webdriverManagerUpdate) {
+      console.log('webdriver-manager path: ' + webdriverManagerPath);
+      spawnSync(opts.nodeBin, [webdriverManagerPath, 'update'], { stdio:'inherit' });
+    }
 
     // configFile is a special property which need not to be in options{} object.
     if (!grunt.util._.isUndefined(this.data.configFile)) {
@@ -149,7 +158,7 @@ module.exports = function(grunt) {
           }
           else {
             this.push(chunk + '\n');
-          }  
+          }
           callback();
         }))
         .pipe(fs.createWriteStream(opts.output));

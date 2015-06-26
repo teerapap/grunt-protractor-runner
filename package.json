@@ -25,7 +25,6 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "pretest": "node scripts/webdriver-manager-update",
     "test": "grunt test"
   },
   "dependencies": {

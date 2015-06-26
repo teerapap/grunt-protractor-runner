@@ -35,6 +35,9 @@ module.exports = function(grunt) {
       },
       testTargetConfigFile: {
         configFile:"test/testConf.js",
+        options: {
+          webdriverManagerUpdate: true
+        }
       },
       testKeepAliveOnFailedTest: {
         configFile:"test/testConf.js",
