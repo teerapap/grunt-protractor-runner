@@ -13,7 +13,6 @@ var path = require('path');
 var fs = require('fs');
 var split = require('split');
 var through2 = require('through2');
-var spawnSync = require('child_process').spawnSync;
 
 module.exports = function(grunt) {
 
@@ -39,11 +38,6 @@ module.exports = function(grunt) {
       output: false,
       webdriverManagerUpdate: false
     });
-
-    if (opts.webdriverManagerUpdate) {
-      console.log('webdriver-manager path: ' + webdriverManagerPath);
-      spawnSync(opts.nodeBin, [webdriverManagerPath, 'update'], { stdio:'inherit' });
-    }
 
     // configFile is a special property which need not to be in options{} object.
     if (!grunt.util._.isUndefined(this.data.configFile)) {
@@ -112,56 +106,71 @@ module.exports = function(grunt) {
       })("--" + a, opts.args[a], args);
     });
 
-    grunt.verbose.writeln("Spawn node with arguments: " + args.join(" "));
 
     // Spawn protractor command
     var done = this.async();
-    var child = grunt.util.spawn({
-        cmd: opts.nodeBin,
-        args: args,
-        opts: {
-          stdio:'pipe'
-        }
-      },
-      function(error, result, code) {
-        if (error) {
-          grunt.log.error(String(result));
-          if(code === 1 && keepAlive) {
-            // Test fails but do not want to stop the grunt process.
-            grunt.log.oklns("Test failed but keep the grunt process alive.");
-          } else {
-            // Test fails and want to stop the grunt process,
-            // or protractor exited with other reason.
-            grunt.warn('Tests failed, protractor exited with code: '+code, code);
+    var startProtractor = function(){
+      grunt.verbose.writeln("Spawn node with arguments: " + args.join(" "));
+      var child = grunt.util.spawn({
+          cmd: opts.nodeBin,
+          args: args,
+          opts: {
+            stdio:'pipe'
           }
+        },
+        function(error, result, code) {
+          if (error) {
+            grunt.log.error(String(result));
+            if(code === 1 && keepAlive) {
+              // Test fails but do not want to stop the grunt process.
+              grunt.log.oklns("Test failed but keep the grunt process alive.");
+            } else {
+              // Test fails and want to stop the grunt process,
+              // or protractor exited with other reason.
+              grunt.warn('Tests failed, protractor exited with code: '+code, code);
+            }
+          }
+          done();
+          done = null;
         }
-        done();
-        done = null;
+      );
+      process.stdin.pipe(child.stdin);
+      child.stdout.pipe(process.stdout);
+      child.stderr.pipe(process.stderr);
+
+      // Write the result in the output file
+      if (!grunt.util._.isUndefined(opts.output) && opts.output !== false) {
+
+        grunt.log.writeln("Output test result to: " + opts.output);
+
+        grunt.file.mkdir(path.dirname(opts.output));
+
+        child.stdout
+          .pipe(split())
+          .pipe(through2(function (chunk, encoding, callback) {
+            if ((/^Using the selenium server at/).test(chunk.toString())) {
+              // skip
+            }
+            else {
+              this.push(chunk + '\n');
+            }
+            callback();
+          }))
+          .pipe(fs.createWriteStream(opts.output));
       }
-    );
-    process.stdin.pipe(child.stdin);
-    child.stdout.pipe(process.stdout);
-    child.stderr.pipe(process.stderr);
+    };
 
-    // Write the result in the output file
-    if (!grunt.util._.isUndefined(opts.output) && opts.output !== false) {
-
-      grunt.log.writeln("Output test result to: " + opts.output);
-
-      grunt.file.mkdir(path.dirname(opts.output));
-
-      child.stdout
-        .pipe(split())
-        .pipe(through2(function (chunk, encoding, callback) {
-          if ((/^Using the selenium server at/).test(chunk.toString())) {
-            // skip
-          }
-          else {
-            this.push(chunk + '\n');
-          }
-          callback();
-        }))
-        .pipe(fs.createWriteStream(opts.output));
+    if (opts.webdriverManagerUpdate) {
+      console.log('webdriver-manager path: ' + webdriverManagerPath);
+      grunt.util.spawn({
+        cmd: opts.nodeBin,
+        args: [webdriverManagerPath, 'update'],
+        opts: {
+          stdio: 'inherit'
+        }
+      }, startProtractor);
+    } else {
+      startProtractor();
     }
   });
 
