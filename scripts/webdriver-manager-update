@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fork = require('child_process').fork;
+
+
+// '.../node_modules/protractor/lib/protractor.js'
+var protractorMainPath = require.resolve('protractor');
+// '.../node_modules/protractor/bin/webdriver-manager'
+var webdriverManagerPath = path.resolve(protractorMainPath, '../../bin/webdriver-manager');
+
+console.log("webdriver-manager path: " + webdriverManagerPath);
+
+fork(webdriverManagerPath, ["update"]);
+
