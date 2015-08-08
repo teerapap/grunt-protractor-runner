@@ -163,6 +163,9 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 2.1.0
+  * Add `options.webdriverManagerUpdate` option (#125)
+  * Fix support for object option via command-line (#116)
 * 2.0.0
   * Upgrade `protractor` to `^2.0.0` (#114)
   * `chromeOnly` in `options.args` is deprecated. Replaced by `directConnect` (#114)
