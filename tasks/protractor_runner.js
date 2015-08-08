@@ -161,7 +161,7 @@ module.exports = function(grunt) {
     };
 
     if (opts.webdriverManagerUpdate) {
-      console.log('webdriver-manager path: ' + webdriverManagerPath);
+      grunt.log.writeln('webdriver-manager path: ' + webdriverManagerPath);
       grunt.util.spawn({
         cmd: opts.nodeBin,
         args: [webdriverManagerPath, 'update'],
