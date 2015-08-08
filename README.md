@@ -84,7 +84,7 @@ If true, grunt will pass 'debug' as second argument to protractor CLI to enable 
 Type: `Object`
 Default value: `{}`
 
-Arguments passed to the command. These arguments can also be supplied via command-line too. Ex.`grunt protractor --specs=specs/some-test.js`
+Arguments passed to the command. These arguments can also be supplied via command-line too. Ex.`grunt protractor --specs=specs/some-test.js`  or for object options `grunt protractor --cucumberOpts={\"tags\":\"@quick\"}`
 Supported arguments are below.
 
 * seleniumAddress `string`: A running selenium address to use
@@ -135,6 +135,7 @@ Run `npm install` to install dependencies.
 
 Then run `grunt` or `npm test` to test the module. You will encounter these.
 
+* Runs unit and e2e tests
 * It opens chrome a couple of times without warnings or errors.
 * A test task fails but the test process keeps alive and continues to the next test tasks.
 
