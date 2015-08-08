@@ -121,7 +121,13 @@ The file that the task should output the results to.
 Type: `String`
 Default value: `node`
 
-Path to the node binary file. Useful if node is not on the PATH. 
+Path to the node binary file. Useful if node is not on the PATH.
+
+#### options.webdriverManagerUpdate
+Type: `Boolean`
+Default value: `false`
+
+If true, `webdriver-manager update` will run and install/update selenium driver.
 
 ## Tests
 
