@@ -137,7 +137,12 @@ module.exports = function(grunt) {
           done = null;
         }
       );
-      process.stdin.pipe(child.stdin);
+      try {
+        process.stdin.pipe(child.stdin);
+      }
+      catch (e) {
+        grunt.log.debug("Non-fatal: stdin cannot be piped in this shell");
+      }
       child.stdout.pipe(process.stdout);
       child.stderr.pipe(process.stderr);
 
