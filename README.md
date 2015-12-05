@@ -163,6 +163,10 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 3.0.0
+  * Update protractor to version 3
+  * Update other dependencies including through2 and split to latest version
+
 * 2.1.2
   * Fix boolean parameters in object.args.params (#130)
   * Modify unit tests to run nodeunit test faster and after protractor task
