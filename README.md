@@ -163,6 +163,9 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 2.1.2
+  * Fix boolean parameters in object.args.params (#130)
+  * Modify unit tests to run nodeunit test faster and after protractor task
 * 2.1.1
   * Fix EINVAL error when run in git bash shell (#134)
 * 2.1.0
