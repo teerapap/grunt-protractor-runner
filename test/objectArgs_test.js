@@ -2,7 +2,7 @@ var exec = require('child_process').execSync,
     runnerStdOut;
 
 exports.testCucumberOpts = function (test) {
-    var cmd = 'grunt protractor --cucumberOpts={\\"tags\\":\\"@quick\\"} --verbose',
+    var cmd = 'grunt protractor:testTargetConfigFile --cucumberOpts={\\"tags\\":\\"@quick\\"} --verbose',
         testDone = false;
 
     runnerStdOut = exec(cmd)
