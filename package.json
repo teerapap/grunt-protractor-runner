@@ -7,6 +7,7 @@
     "name": "Teerapap Changwichukarn",
     "email": "teerapap.c@gmail.com"
   },
+  "license" : "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/teerapap/grunt-protractor-runner.git"
@@ -14,12 +15,6 @@
   "bugs": {
     "url": "https://github.com/teerapap/grunt-protractor-runner/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/teerapap/grunt-protractor-runner/blob/master/LICENSE-MIT"
-    }
-  ],
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
