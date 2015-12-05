@@ -100,7 +100,11 @@ module.exports = function(grunt) {
             // Skip these types
           } else if (type === "boolean") {
             // Add --[object].key
-            args.push(prefix+"."+key);
+	    if (val) {
+		args.push(prefix+"."+key);
+	    } else {
+		args.push("--no"+prefix.substring(1)+"."+key);
+	    }
           } else {
             // Add --[object].key value
             args.push(prefix+"."+key, val);

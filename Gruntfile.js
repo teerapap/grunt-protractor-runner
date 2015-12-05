@@ -54,7 +54,8 @@ module.exports = function(grunt) {
           args: {
             params: {
               number: 1,
-              bool: true,
+              bool_true: true,
+              bool_false: false,
               str: "string",
               nil: null, // Null is not supported.
               obj: {
