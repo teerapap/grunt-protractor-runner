@@ -121,6 +121,12 @@ Default value: `false`
 
 The file that the task should output the results to.
 
+#### options.outputOptions
+Type: `Object`
+Default value: `{}`
+
+Options for output file. For details see: [fs.createWriteStream's options](https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options)
+
 #### options.nodeBin
 Type: `String`
 Default value: `node`
