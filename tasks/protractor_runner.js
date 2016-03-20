@@ -22,14 +22,11 @@ module.exports = function(grunt) {
     var protractorMainPath = require.resolve('protractor');
     // '.../node_modules/protractor/bin/protractor'
     var protractorBinPath = path.resolve(protractorMainPath, '../../bin/protractor');
-    // '.../node_modules/protractor/referenceConf.js'
-    var protractorRefConfPath = path.resolve(protractorMainPath, '../../referenceConf.js');
     // '.../node_modules/protractor/bin/webdriver-manager'
     var webdriverManagerPath = path.resolve(protractorMainPath, '../../bin/webdriver-manager');
 
     // Merge task-specific and/or target-specific options with these defaults.
     var opts = this.options({
-      configFile: protractorRefConfPath,
       keepAlive: false,
       noColor: false,
       debug: false,
@@ -52,7 +49,9 @@ module.exports = function(grunt) {
     var boolArgs = ["includeStackTrace", "verbose"];
     var objectArgs = ["params", "capabilities", "cucumberOpts", "mochaOpts"];
 
-    var args = process.execArgv.concat([protractorBinPath, opts.configFile]);
+    var cmd = [protractorBinPath];
+    if (!grunt.util._.isUndefined(opts.configFile)) cmd.push(opts.configFile);
+    var args = process.execArgv.concat(cmd);
     if (opts.noColor){
       args.push('--no-jasmineNodeOpts.showColors');
     }

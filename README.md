@@ -60,7 +60,7 @@ grunt.initConfig({
 
 #### options.configFile
 Type: `String`
-Default value: `node_modules/protractor/referenceConf.js` relative to where protractor module is installed.
+Default value: No default value
 
 A protractor config file.
 
