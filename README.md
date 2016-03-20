@@ -114,12 +114,19 @@ Supported arguments are below.
 * mochaOpts `object`: Mocha test framework options object to be passed
 * beforeLaunch `string`: You can specify a file containing code to run once configs are read but before any environment setup. This will only run once, and before onPrepare.
 * onPrepare `string`: You can specify a file containing code to run once protractor is ready and available, and before the specs are executed. If multiple capabilities are being run, this will run once per capability.
+* webDriverProxy `string`: WebDriver proxy configuration to run remote tests
 
 #### options.output
 Type: `String`
 Default value: `false`
 
 The file that the task should output the results to.
+
+#### options.outputOptions
+Type: `Object`
+Default value: `{}`
+
+Options for output file. For details see: [fs.createWriteStream's options](https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options)
 
 #### options.nodeBin
 Type: `String`
