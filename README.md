@@ -174,6 +174,10 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 3.1.0
+  * Add `options.outputOptions` (#143)
+  * Support `webDriverProxy` in `options.args` (#147)
+  * Remove referenceConf.js as default value of options.configFile because it does not exist anymore
 * 3.0.0
   * Update protractor to version 3
   * Update other dependencies including through2 and split to latest version
