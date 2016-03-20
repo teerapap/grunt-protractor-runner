@@ -36,6 +36,7 @@ module.exports = function(grunt) {
       nodeBin: 'node',
       args: {},
       output: false,
+      outputOptions: {},
       webdriverManagerUpdate: false
     });
 
@@ -168,7 +169,7 @@ module.exports = function(grunt) {
             }
             callback();
           }))
-          .pipe(fs.createWriteStream(opts.output));
+          .pipe(fs.createWriteStream(opts.output, opts.outputOptions));
       }
     };
 
