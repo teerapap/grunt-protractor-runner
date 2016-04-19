@@ -51,7 +51,9 @@ module.exports = function(grunt) {
     var objectArgs = ["params", "capabilities", "cucumberOpts", "mochaOpts"];
 
     var cmd = [protractorBinPath];
-    if (!grunt.util._.isUndefined(opts.configFile)) cmd.push(opts.configFile);
+    if (!grunt.util._.isUndefined(opts.configFile)){
+      cmd.push(opts.configFile);
+    }
     var args = process.execArgv.concat(cmd);
     if (opts.noColor){
       args.push('--no-jasmineNodeOpts.showColors');
