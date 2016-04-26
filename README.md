@@ -27,7 +27,7 @@ grunt.loadNpmTasks('grunt-protractor-runner');
 Finally you need a Selenium server. If you don't have one set up already, you can install a local standalone version with this command:
 
 ```shell
-./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update
+./node_modules/grunt-protractor-runner/scripts/webdriver-manager-update
 ```
 
 ## The "protractor" task
