@@ -110,6 +110,7 @@ Supported arguments are below.
 * sauceSeleniumAddress `string`: Customize the URL Protractor uses to connect to sauce labs (for example, if you are tunneling selenium traffic through a sauce connect tunnel). Default is `ondemand.saucelabs.com:80/wd/hub`
 * capabilities `object`: Capabilities object to be passed to the test, e.g. browserName, platform and version
 * framework `string`: Limited support for using mocha as the test framework instead of jasmine.
+* frameworkPath `string`: When `framework` is set to `custom`, set this path relative to the config file or absolute
 * cucumberOpts `object`: Cucumber framework options object to be passed to the test, e.g. require, tags and format
 * mochaOpts `object`: Mocha test framework options object to be passed
 * beforeLaunch `string`: You can specify a file containing code to run once configs are read but before any environment setup. This will only run once, and before onPrepare.
