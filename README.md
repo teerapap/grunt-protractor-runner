@@ -90,7 +90,7 @@ Default value: `{}`
 
 Arguments passed to the command. These arguments can also be supplied via command-line too. Ex.`grunt protractor --specs=specs/some-test.js`  or for object options `grunt protractor --cucumberOpts={\"tags\":\"@quick\"}` or `--params='{ "location" : { "href" : "some url" } }'`
 
-Passing object argument with `--params.location.xxx=yyy` is not supported at the moment. if you need this behaviour, please join the discussion in #148.
+Passing object argument with `--params.xxx.yyy=zzz` is not supported at the moment. If you need this behaviour, please join the discussion in [#148](https://github.com/teerapap/grunt-protractor-runner/pull/148) .
 
 Supported arguments are below.
 
