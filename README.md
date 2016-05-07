@@ -88,7 +88,10 @@ If true, grunt will pass 'debug' as second argument to protractor CLI to enable 
 Type: `Object`
 Default value: `{}`
 
-Arguments passed to the command. These arguments can also be supplied via command-line too. Ex.`grunt protractor --specs=specs/some-test.js`  or for object options `grunt protractor --cucumberOpts={\"tags\":\"@quick\"}`
+Arguments passed to the command. These arguments can also be supplied via command-line too. Ex.`grunt protractor --specs=specs/some-test.js`  or for object options `grunt protractor --cucumberOpts={\"tags\":\"@quick\"}` or `--params='{ "location" : { "href" : "some url" } }'`
+
+Passing object argument with `--params.location.xxx=yyy` is not supported at the moment. if you need this behaviour, please join the discussion in #148.
+
 Supported arguments are below.
 
 * seleniumAddress `string`: A running selenium address to use
