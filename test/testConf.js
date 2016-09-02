@@ -34,6 +34,11 @@ exports.config = {
   // connect to an already running instance of selenium. This usually looks like
   seleniumAddress: null,
 
+  suites: {
+    login: 'blankTest.js',
+    logout: 'blankTest.js'
+  },
+
   // ----- What tests to run -----
   //
   // Spec patterns are relative to the location of this config.
@@ -59,7 +64,7 @@ exports.config = {
   baseUrl: 'http://localhost:8000',
 
   // Selector for the element housing the angular app - this defaults to
-  // body, but is necessary if ng-app is on a descendant of <body>  
+  // body, but is necessary if ng-app is on a descendant of <body>
   rootElement: 'body',
 
   // A callback function called once protractor is ready and available, and
@@ -72,7 +77,7 @@ exports.config = {
     //     jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(
     //         'outputdir/', true, true));
   },
-  
+
   // ----- Options to be passed to minijasminenode -----
   jasmineNodeOpts: {
     // onComplete will be called just before the driver quits.

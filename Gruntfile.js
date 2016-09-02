@@ -68,6 +68,7 @@ module.exports = function(grunt) {
             },
             rootElement:"body",
             specs:["test/argsTest.js"],
+            suite: ['login', 'logout'],
             verbose:true
           }
         }
