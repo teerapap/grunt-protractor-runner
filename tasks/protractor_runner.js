@@ -70,7 +70,11 @@ module.exports = function(grunt) {
     });
     listArgs.forEach(function(a) {
       if (a in opts.args || grunt.option(a)) {
-        args.push('--'+a,  grunt.option(a) || opts.args[a].join(","));
+        var arg = opts.args[a];
+        if (arg instanceof Array) {
+          arg = arg.join(",");
+        }
+        args.push('--'+a,  grunt.option(a) || arg);
       }
     });
     boolArgs.forEach(function(a) {
