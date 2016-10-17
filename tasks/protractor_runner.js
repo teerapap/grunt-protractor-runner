@@ -45,8 +45,8 @@ module.exports = function(grunt) {
     grunt.verbose.writeln("Options: " + util.inspect(opts));
 
     var keepAlive = opts['keepAlive'];
-    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser", "chromeDriver", "chromeOnly", "directConnect", "sauceUser", "sauceKey", "sauceSeleniumAddress", "framework", "frameworkPath", "suite", "beforeLaunch", "onPrepare", "webDriverProxy"];
-    var listArgs = ["specs", "exclude"];
+    var strArgs = ["seleniumAddress", "seleniumServerJar", "seleniumPort", "baseUrl", "rootElement", "browser", "chromeDriver", "chromeOnly", "directConnect", "sauceUser", "sauceKey", "sauceSeleniumAddress", "framework", "frameworkPath", "beforeLaunch", "onPrepare", "webDriverProxy"];
+    var listArgs = ["specs", "exclude", "suite"];
     var boolArgs = ["includeStackTrace", "verbose"];
     var objectArgs = ["params", "capabilities", "cucumberOpts", "mochaOpts"];
 
@@ -70,7 +70,11 @@ module.exports = function(grunt) {
     });
     listArgs.forEach(function(a) {
       if (a in opts.args || grunt.option(a)) {
-        args.push('--'+a,  grunt.option(a) || opts.args[a].join(","));
+        var arg = opts.args[a];
+        if (arg instanceof Array) {
+          arg = arg.join(",");
+        }
+        args.push('--'+a,  grunt.option(a) || arg);
       }
     });
     boolArgs.forEach(function(a) {

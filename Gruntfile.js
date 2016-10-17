@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           }
         }
       },
-      testArgs: {
+      testArgs1: {
         configFile:"test/testConf.js",
         options: {
           args: {
@@ -68,6 +68,30 @@ module.exports = function(grunt) {
             },
             rootElement:"body",
             specs:["test/argsTest.js"],
+            verbose:true
+          }
+        }
+      },
+      testArgsSuiteArray: {
+        configFile:"test/testConf.js",
+        options: {
+          args: {
+            capabilities: {
+              'browserName': 'chrome'
+            },
+            suite: ['login', 'logout'],
+            verbose:true
+          }
+        }
+      },
+      testArgSuiteString: {
+        configFile:"test/testConf.js",
+        options: {
+          args: {
+            capabilities: {
+              'browserName': 'chrome'
+            },
+            suite: 'login',
             verbose:true
           }
         }

@@ -5,7 +5,7 @@
 > A Grunt plugin for running [Protractor](https://github.com/angular/protractor) runner.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`. 
+This plugin requires Grunt `~0.4.1`.
 
 For Protractor `3.x.x`, please use version `v3.x.x` of this plugin.
 
@@ -101,7 +101,7 @@ Supported arguments are below.
 * rootElement `string`: Element housing ng-app, if not html or body
 * specs `array`: Array of spec files to test. Ex. `["spec1.js","spec2.js"]`
 * exclude `array`: Array of files to exclude from testing. Ex. `["spec2.js"]`
-* suite `string`: Name of test suite to run
+* suite `string` or `array`: Suite or Array of suites to run. Ex. `["suite1", "suite2"]`
 * includeStackTrace `boolean`: Print stack trace on error
 * verbose `boolean`: Print full spec names
 * browser `string`: Browser name, e.g. chrome or firefox
