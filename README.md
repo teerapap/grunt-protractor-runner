@@ -5,7 +5,7 @@
 > A Grunt plugin for running [Protractor](https://github.com/angular/protractor) runner.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`.
+This plugin requires Grunt `>=0.4.1`.
 
 For Protractor `3.x.x`, please use version `v3.x.x` of this plugin.
 
@@ -179,7 +179,9 @@ You need to install/update selenium webdriver for protractor.
 ## Release History
 
 * 4.0.0
-  * Upgrade `protractor` to version 4
+  * Accept array for `suite` argument (#172)
+  * Upgrade `protractor` to version 4 (#168)
+
 * 3.2.0
   * Support --frameworkPath in options.args (#155, #156)
   * Support `grunt` version `>=0.4.0"` (#154)
