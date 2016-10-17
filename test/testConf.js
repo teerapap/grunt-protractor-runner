@@ -35,8 +35,8 @@ exports.config = {
   seleniumAddress: null,
 
   suites: {
-    login: 'blankTest.js',
-    logout: 'blankTest.js'
+    login: 'loginSuiteTest.js',
+    logout: 'logoutSuiteTest.js'
   },
 
   // ----- What tests to run -----
