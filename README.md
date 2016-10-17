@@ -178,6 +178,8 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 4.0.0
+  * Upgrade `protractor` to version 4
 * 3.2.0
   * Support --frameworkPath in options.args (#155, #156)
   * Support `grunt` version `>=0.4.0"` (#154)
