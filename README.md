@@ -178,6 +178,9 @@ You need to install/update selenium webdriver for protractor.
 
 ## Release History
 
+* 5.0.0
+  * Upgrade `protractor` to version 5
+
 * 4.0.0
   * Accept array for `suite` argument (#172)
   * Upgrade `protractor` to version 4 (#168)
