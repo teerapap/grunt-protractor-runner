@@ -7,6 +7,10 @@
 ## Getting Started
 This plugin requires Grunt `>=0.4.1`.
 
+For Protractor `5.x.x`, please use version `v5.x.x` of this plugin.
+
+For Protractor `4.x.x`, please use version `v4.x.x` of this plugin.
+
 For Protractor `3.x.x`, please use version `v3.x.x` of this plugin.
 
 For Protractor `2.x.x`, please use version `v2.x.x` of this plugin.
