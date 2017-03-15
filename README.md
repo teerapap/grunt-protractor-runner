@@ -7,6 +7,10 @@
 ## Getting Started
 This plugin requires Grunt `>=0.4.1`.
 
+For Protractor `5.x.x`, please use version `v5.x.x` of this plugin.
+
+For Protractor `4.x.x`, please use version `v4.x.x` of this plugin.
+
 For Protractor `3.x.x`, please use version `v3.x.x` of this plugin.
 
 For Protractor `2.x.x`, please use version `v2.x.x` of this plugin.
@@ -177,6 +181,9 @@ You need to install/update selenium webdriver for protractor.
 * Run `webdriver-manager update` or `node scripts/webdriver-manager-update` or `node ./node_modules/protractor/bin/webdriver-manager update`
 
 ## Release History
+
+* 5.0.0
+  * Upgrade `protractor` to version 5 (#185)
 
 * 4.0.0
   * Accept array for `suite` argument (#172)
