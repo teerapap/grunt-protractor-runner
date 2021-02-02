@@ -1,3 +1,10 @@
+# :rotating_light: Warning
+
+This repository is DEPRECATED and no longer maintained.
+Thank you for all your contributions
+
+---
+
 # grunt-protractor-runner
 
 [![Build Status](https://travis-ci.org/teerapap/grunt-protractor-runner.svg?branch=master)](https://travis-ci.org/teerapap/grunt-protractor-runner)
